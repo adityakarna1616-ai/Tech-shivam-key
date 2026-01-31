@@ -1,207 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir='ltr' lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Shivam Generation | Key Access</title>
-    <style>
-        :root {
-            --bg-color: #0f0f12;
-            --card-bg: #1a1a20;
-            --text-color: #e0e0e0;
-            --accent-color: #00d4ff;
-            --error-color: #ff4757;
-            --success-color: #2ed573;
-            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<meta content='max-image-preview:large' name='robots'/>
+<title>Key - Tech Shivam</title> <!-- Name Changed -->
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-family);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
+<!-- Theme Color -->
+<meta content='#0f172a' name='theme-color'/>
 
-        .container {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            border: 1px solid #333;
-        }
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+<style>
+/* 
+   SIMPLE CLEAN THEME FOR TECH SHIVAM 
+   Based on Median UI simplified
+*/
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #e2e8f0;
+    --accent-color: #00ffcc;
+    --border-color: #334155;
+    --font-main: 'Noto Sans', sans-serif;
+}
 
-        .status-box {
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            display: none; /* Hidden by default */
-        }
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-        /* Success State UI */
-        #key-display-area {
-            display: none;
-        }
+/* Header Style */
+header {
+    background-color: var(--card-bg);
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
 
-        .key-input {
-            width: 100%;
-            padding: 12px;
-            background: #000;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
-            font-family: monospace;
-            font-size: 1.2rem;
-            text-align: center;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            outline: none;
-        }
+header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .action-btn {
-            background-color: var(--accent-color);
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: opacity 0.2s;
-            width: 100%;
-        }
+header a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        .action-btn:hover {
-            opacity: 0.9;
-        }
+/* Main Container */
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    padding: 20px;
+}
 
-        /* Error State UI */
-        .error-msg {
-            color: var(--error-color);
-            border: 1px solid var(--error-color);
-            background: rgba(255, 71, 87, 0.1);
-        }
+/* KEY WIDGET STYLING (Main Feature) */
+.dp-key-widget {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    animation: fadeIn 0.8s ease-in-out;
+}
 
-        .info-text {
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 15px;
-        }
-    </style>
+.dp-key-widget h3 {
+    margin: 0 0 15px 0;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.dp-status {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.dp-key-box {
+    background: #020617;
+    border: 2px dashed var(--accent-color);
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    word-break: break-all;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dp-btn {
+    background-color: var(--accent-color);
+    color: #0f172a;
+    border: none;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.dp-btn:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #64748b;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>Tech Shivam Generation</h1>
+<!-- HEADER -->
+<header>
+    <h2><a href="#">Tech Shivam</a></h2>
+</header>
 
-        <!-- ACCESS DENIED UI -->
-        <div id="access-denied" class="status-box error-msg">
-            ACCESS DENIED<br>
-            <span style="font-size:0.8em; font-weight:normal; color:#ccc;">Invalid Entry Detected</span>
+<!-- MAIN CONTENT -->
+<div class="main-container">
+    
+    <!-- KEY GENERATOR TOOL START -->
+    <div class="dp-key-widget">
+        <h3>Get Your Key</h3>
+        <p class="dp-status">System Status: <span style="color:#4ade80">Online</span></p>
+        
+        <div id="finalKeyDisplay" class="dp-key-box">
+            Scanning...
         </div>
 
-        <!-- VALID KEY UI -->
-        <div id="key-display-area">
-            <p style="color: var(--success-color); font-size: 0.9rem; margin-bottom: 10px;">SUCCESS: SECURE ACCESS VERIFIED</p>
-            
-            <input type="text" id="final-key" class="key-input" readonly value="GENERATING...">
-            
-            <button class="action-btn" onclick="copyKey()">COPY KEY</button>
-            
-            <p class="info-text">Key generated successfully. This session is now closed.</p>
-        </div>
+        <button class="dp-btn" onclick="copyMyKey(this)">Copy Key</button>
     </div>
+    <!-- KEY GENERATOR TOOL END -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // DOM Elements
-            const deniedEl = document.getElementById('access-denied');
-            const successEl = document.getElementById('key-display-area');
-            const keyInput = document.getElementById('final-key');
+</div>
 
-            // 1. ACCESS CONTROL LOGIC
-            // We check for a specific URL parameter that acts as the API handshake.
-            // Example flow: user visits site.com/?access_token=shivam_secure_101
-            const urlParams = new URLSearchParams(window.location.search);
-            const validToken = "shivam_secure"; // Expected handshake value
-            
-            // Check if the 'entry' parameter exists and matches our token
-            if (urlParams.get('entry') === validToken) {
-                
-                // --- VALID ACCESS PATH ---
+<!-- FOOTER -->
+<footer>
+    &copy; <script>document.write(new Date().getFullYear())</script> Tech Shivam. All Rights Reserved.
+</footer>
 
-                // 2. GENERATE KEY
-                // Generate the key immediately before UI render
-                const newKey = generateTechShivamKey();
-                keyInput.value = newKey;
+<!-- SCRIPT FOR KEY GENERATION -->
+<script>
+    window.addEventListener('load', function() {
+        // Parameters to ignore (Blogger adds 'm=1' for mobile, etc.)
+        const ignoredParams = ['m', 'commentPage', 'zx', 'utm_source'];
 
-                // 3. SHOW UI
-                deniedEl.style.display = 'none';
-                successEl.style.display = 'block';
+        const displayBox = document.getElementById("finalKeyDisplay");
+        let foundKey = null;
 
-                // 4. SECURITY CLEANUP (CRITICAL)
-                // We use history.replaceState to strip the URL parameters.
-                // Result: The URL becomes clean (e.g., site.com/). 
-                // If the user Refreshes (F5) now, the parameters are gone, triggering the "Access Denied" block below.
-                const cleanURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
-                window.history.replaceState({ path: cleanURL }, '', cleanURL);
+        const urlParams = new URLSearchParams(window.location.search);
 
-            } else {
-                
-                // --- INVALID / DIRECT ACCESS PATH ---
-                
-                // Block generation, show error, hide inputs
-                successEl.style.display = 'none';
-                deniedEl.style.display = 'block';
-                keyInput.value = ""; // Ensure empty
-                
-                // Optional: Console warning
-                console.warn("Security Alert: Direct access attempt blocked.");
-            }
-        });
-
-        // KEY GENERATION ALGORITHM
-        // Format: TS-XXXX-XXXX-XXXX (Tech Shivam Standard)
-        function generateTechShivamKey() {
-            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            
-            const getSegment = () => {
-                let segment = "";
-                for(let i=0; i<4; i++) {
-                    segment += chars.charAt(Math.floor(Math.random() * chars.length));
+        // 1. Check for ?key=VALUE
+        if (urlParams.has('key')) {
+            foundKey = urlParams.get('key');
+        }
+        // 2. Check for ?VALUE
+        else {
+            for(const [key, value] of urlParams.entries()) {
+                if (!ignoredParams.includes(key)) {
+                    foundKey = key;
+                    break;
                 }
-                return segment;
-            };
-
-            return `TS-${getSegment()}-${getSegment()}-${getSegment()}`;
+            }
         }
 
-        // COPY UTILITY
-        function copyKey() {
-            const copyText = document.getElementById("final-key");
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // Mobile support
-            document.execCommand("copy");
-            
-            // Visual Feedback
-            const btn = document.querySelector('.action-btn');
-            const originalText = btn.innerText;
-            btn.innerText = "COPIED!";
-            setTimeout(() => { btn.innerText = originalText; }, 2000);
+        // 3. Check for #VALUE
+        if (!foundKey && window.location.hash) {
+            foundKey = window.location.hash.substring(1);
         }
-    </script>
+
+        // Display Logic
+        if (foundKey && foundKey !== "") {
+            try { foundKey = decodeURIComponent(foundKey); } catch(e) {}
+            displayBox.innerText = foundKey;
+            displayBox.style.color = "#ffffff";
+            displayBox.style.borderColor = "#00ffcc";
+        } else {
+            displayBox.innerText = "NO KEY FOUND";
+            displayBox.style.color = "#ff4d4d"; // Red
+            displayBox.style.borderColor = "#ff4d4d";
+        }
+    });
+
+    function copyMyKey(btn) {
+        const txt = document.getElementById("finalKeyDisplay").innerText;
+        if (txt !== "NO KEY FOUND" && txt !== "Scanning...") {
+            navigator.clipboard.writeText(txt).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = "Copied!";
+                btn.style.backgroundColor = "#fff";
+                setTimeout(() => { 
+                    btn.innerText = originalText; 
+                    btn.style.backgroundColor = "#00ffcc";
+                }, 2000);
+            });
+        } else {
+            alert("No key detected in URL.");
+        }
+    }
+</script>
+
 </body>
 </html>
